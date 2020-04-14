@@ -47,11 +47,11 @@ async def handler(event):
                 finish = str(datetime.now().strftime("%Y-%m-%d %H:%M:") + '59')
         else:
             if not (re.findall('до', msg)):  # Гетт 25.04-25.04
-                start = '2019-{}-{} 00:00:01'.format(msg[8:10], msg[5:7])
+                start = '2020-{}-{} 00:00:01'.format(msg[8:10], msg[5:7])
                 if (str(msg[11:16]) == str(datetime.now().strftime("%d.%m"))):
                     finish = str(datetime.now().strftime("%Y-%m-%d %H:%M:") + '59')
                 else:
-                    finish = '2019-{}-{} 23:59:59'.format(msg[14:16], msg[11:13])
+                    finish = '2020-{}-{} 23:59:59'.format(msg[14:16], msg[11:13])
             else:  # Гетт 25.04-25.04 с 10 до 12
                 start_hour = str(msg).split(' ')[3]
                 end_hour = str(int(str(msg).split(' ')[5]) - 1)
@@ -63,8 +63,8 @@ async def handler(event):
                 if len(end_hour) == 1:
                     end_hour = '0' + end_hour
 
-                start = str('2019-{}-{} '.format(msg[8:10], msg[5:7]) + str(start_hour) + ':00:01')
-                finish = str('2019-{}-{} '.format(msg[14:16], msg[11:13]) + str(end_hour) + ':59:59')
+                start = str('2020-{}-{} '.format(msg[8:10], msg[5:7]) + str(start_hour) + ':00:01')
+                finish = str('2020-{}-{} '.format(msg[14:16], msg[11:13]) + str(end_hour) + ':59:59')
 
 
         gett(start, finish)
